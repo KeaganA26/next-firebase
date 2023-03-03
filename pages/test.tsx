@@ -65,13 +65,18 @@ const Test: NextPage = () => {
         </ul>
       </nav>
       <main className={styles.main}>
-        <div className={styles.sliderContainer}>
+        <div
+          style={{ backgroundColor: "red", height: 200, width: 200 }}
+          // className={styles.sliderContainer}
+        >
           <Slider {...sliderSettings}>
-            {images.map((image, index) => (
-              <div key={index}>
-                <img src={image} />
-              </div>
-            ))}
+            {images.map((image, index) => {
+              return (
+                <div key={index}>
+                  <img width={200} height={200} src={image} />
+                </div>
+              );
+            })}
           </Slider>
         </div>
         <div className={styles.contentContainer}>
@@ -92,5 +97,6 @@ const Test: NextPage = () => {
         <p>&copy; 2023</p>
       </footer>
     </div>
-  )}
- export default Test;
+  );
+};
+export default Test;

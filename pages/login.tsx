@@ -1,24 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase';
+import React, { useState, useEffect } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase";
+import { useRouter } from "next/router";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
+
+  const router = useRouter();
 
   const signIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setLoggedIn(true);
-      const userDetails = {
-        email: email,
-        password: password
-      }
-      localStorage.setItem('userDetails', JSON.stringify(userDetails));
-    } catch (error) {
-      setError(error.message);
+      // const userDetails = {
+      //   email: email,
+      //   password: password
+      // }
+      // localStorage.setItem('userDetails', JSON.stringify(userDetails));
+      router.push("/home");
+    } catch (error: any) {
+      setError(error?.message ?? "Unknown error");
     }
   };
 
@@ -26,7 +30,7 @@ const LoginPage = () => {
     const userDetails = localStorage.getItem("userDetails"); // get the current user
     if (userDetails) {
       setLoggedIn(true);
-      window.location.href = '/home'; // redirect to home page if user is already logged in
+      window.location.href = "/home"; // redirect to home page if user is already logged in
     }
   }, [loggedIn]);
 

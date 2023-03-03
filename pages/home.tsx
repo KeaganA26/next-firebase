@@ -3,7 +3,7 @@ import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { auth } from "./firebase";
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/.module.css'
 
 const HomePage: NextPage = () => {
   const [loggedIn, setLoggedIn] = useState(false);

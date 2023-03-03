@@ -26,13 +26,13 @@ const LoginPage = () => {
     }
   };
 
-  useEffect(() => {
-    const userDetails = localStorage.getItem("userDetails"); // get the current user
-    if (userDetails) {
-      setLoggedIn(true);
-      window.location.href = "/home"; // redirect to home page if user is already logged in
-    }
-  }, [loggedIn]);
+  // useEffect(() => {
+  //   const userDetails = localStorage.getItem("userDetails"); // get the current user
+  //   if (userDetails) {
+  //     setLoggedIn(true);
+  //     window.location.href = "/home"; // redirect to home page if user is already logged in
+  //   }
+  // }, [loggedIn]);
 
   return (
     <div className="login-page">

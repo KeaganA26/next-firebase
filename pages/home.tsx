@@ -1,9 +1,11 @@
+import { NextPage } from "next";
 import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { auth } from "./firebase";
+import styles from '@/styles/Home.module.css'
 
-const HomePage = () => {
+const HomePage: NextPage = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -23,20 +25,6 @@ const HomePage = () => {
     }
     setLoading(false);
   });
-  // useEffect(() => {
-  //   const userDetails = localStorage.getItem("userDetails");
-  //   //const parsedItem = JSON.parse(savedItem);
-  //   if (!userDetails) {
-  //     window.location.href = "/login"; // redirect to login page if user is not logged in
-  //   } else {
-  //     setLoggedIn(true);
-  //     console.log("stored information \n", JSON.parse(userDetails));
-  //   }
-  // }, []); // run this effect only on mount
-
-  // if (!loggedIn && !loading) {
-  //   return <p>You are not logged in. Redirecting to login page...</p>;
-  // }
 
   return (
     <div className="home-page">

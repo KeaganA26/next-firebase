@@ -15,24 +15,12 @@ const LoginPage = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setLoggedIn(true);
-      // const userDetails = {
-      //   email: email,
-      //   password: password
-      // }
-      // localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
       router.push("/home");
     } catch (error: any) {
       setError(error?.message ?? "Unknown error");
     }
   };
-
-  // useEffect(() => {
-  //   const userDetails = localStorage.getItem("userDetails"); // get the current user
-  //   if (userDetails) {
-  //     setLoggedIn(true);
-  //     window.location.href = "/home"; // redirect to home page if user is already logged in
-  //   }
-  // }, [loggedIn]);
 
   return (
     <div className="login-page">

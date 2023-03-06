@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.banner {
+  background-color: hsl(0, 0%, 38%);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.logo a {
+  display: inline-block;
+  width: 100px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.navLinks li {
+  margin: 0 10px;
+}
+
+.navLinks li .navLinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navLinks li .navLinkContainer span {
+  text-decoration: none;
+  color: hsl(0, 0%, 87%);
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 2px hsl(0, 0%, 100%);
+}
+
+.navLinks li .navLinkContainer:hover span {
+  background-color: #000;
+  color: #fff;
+}
+
+.active .navLinkContainer span {
+  background-color: #000;
+  color: #fff;
+}

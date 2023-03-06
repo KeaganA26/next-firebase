@@ -1,49 +1,9 @@
-/* Test.module.css */
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-}
-
-.nav {
-  width: 100%;
-  padding: 20px 0;
-}
-
-.banner {
-  background-color: #f1c40f;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-.navLinks {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.navLinks li {
-  margin: 0 10px;
-}
-
-.navLinks li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #000;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
-}
-
-.navLinks li a:hover {
-  background-color: #000;
-  color: #fff;
 }
 
 .main {
